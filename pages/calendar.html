@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Календарь - Vistula Events</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/calendar.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="../index.html" class="logo-btn">
+          <span class="logo-text">Vistula Events</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Strona główna</a>
+          <a href="events.html">Wydarzenia</a>
+          <a href="calendar.html" class="active">Kalendarz</a>
+          <a href="about.html">O nas</a>
+          <a href="login.html" class="btn-auth">Zaloguj się</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero calendar-hero">
+        <div class="hero-content">
+          <h1>Kalendarz wydarzeń</h1>
+          <p>Planuj swój harmonogram razem z nami</p>
+        </div>
+      </section>
+
+      <div class="mini-calendar" id="miniCalendar">
+        <!-- Generowane przez JavaScript -->
+      </div>
+
+      <section class="calendar-section">
+        <div class="container">
+          <div class="calendar-controls">
+            <div class="calendar-nav">
+              <button id="prevMonth" class="btn btn-outline">
+                &#8592; Poprzedni
+              </button>
+              <h2 id="currentMonth">Kwiecień 2024</h2>
+              <button id="nextMonth" class="btn btn-outline">
+                Następny &#8594;
+              </button>
+            </div>
+            <div class="view-controls">
+              <button class="btn btn-outline active" data-view="month">
+                Miesiąc
+              </button>
+              <button class="btn btn-outline" data-view="week">Tydzień</button>
+              <button class="btn btn-outline" data-view="day">Dzień</button>
+            </div>
+            <div class="export-controls">
+              <button class="btn btn-outline" id="exportCalendar">
+                <i class="fas fa-download"></i> Eksport kalendarza
+              </button>
+            </div>
+          </div>
+
+          <div class="calendar-filters">
+            <select class="filter-select" id="categoryFilter">
+              <option value="">Wszystkie kategorie</option>
+              <option value="academic">Akademickie</option>
+              <option value="scientific">Naukowe</option>
+              <option value="cultural">Kulturalne</option>
+              <option value="workshop">Warsztaty</option>
+              <option value="language">Językowe</option>
+              <option value="business">Biznesowe</option>
+              <option value="sport">Sportowe</option>
+              <option value="art">Artystyczne</option>
+              <option value="career">Kariera</option>
+            </select>
+          </div>
+
+          <div class="calendar-legend">
+            <h3>Kategorie wydarzeń</h3>
+            <div class="legend-items">
+              <div class="legend-item">
+                <span class="legend-dot academic"></span>
+                <span>Akademickie</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot scientific"></span>
+                <span>Naukowe</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot cultural"></span>
+                <span>Kulturalne</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot workshop"></span>
+                <span>Warsztaty</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot language"></span>
+                <span>Językowe</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot business"></span>
+                <span>Biznesowe</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot sport"></span>
+                <span>Sportowe</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot art"></span>
+                <span>Artystyczne</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot career"></span>
+                <span>Kariera</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="calendar-search">
+            <input
+              type="text"
+              id="eventSearch"
+              placeholder="Szukaj wydarzeń..."
+              class="search-input"
+            />
+          </div>
+
+          <div class="calendar-grid">
+            <div class="calendar-header">
+              <div>Pon</div>
+              <div>Wt</div>
+              <div>Śr</div>
+              <div>Czw</div>
+              <div>Pt</div>
+              <div>Sob</div>
+              <div>Niedz</div>
+            </div>
+            <div id="calendarDays" class="calendar-days"></div>
+          </div>
+
+          <div class="event-preview">
+            <h3>Wydarzenia w wybranym dniu</h3>
+            <div id="selectedDateEvents" class="selected-date-events">
+              <p class="no-events">Wybierz datę, aby zobaczyć wydarzenia</p>
+            </div>
+            <div class="event-actions">
+              <button class="btn btn-outline btn-small add-to-calendar">
+                <i class="fas fa-calendar-plus"></i> Dodaj do kalendarza
+              </button>
+              <button class="btn btn-outline btn-small share-event">
+                <i class="fas fa-share"></i> Podziel się
+              </button>
+            </div>
+          </div>
+
+          <div class="modal" id="addEventModal">
+            <div class="modal-content">
+              <span class="close-modal">&times;</span>
+              <h3>Dodaj nowe wydarzenie</h3>
+              <form id="addEventForm" class="event-form">
+                <div class="form-group">
+                  <label for="eventTitle">Nazwa wydarzenia</label>
+                  <input type="text" id="eventTitle" required />
+                </div>
+                <div class="form-group">
+                  <label for="eventDate">Data</label>
+                  <input type="date" id="eventDate" required />
+                </div>
+                <div class="form-group">
+                  <label for="eventTime">Czas</label>
+                  <input type="time" id="eventTime" required />
+                </div>
+                <div class="form-group">
+                  <label for="eventCategory">Kategoria</label>
+                  <select id="eventCategory" required>
+                    <option value="academic">Akademickie</option>
+                    <option value="scientific">Naukowe</option>
+                    <option value="cultural">Kulturalne</option>
+                    <option value="workshop">Warsztaty</option>
+                    <option value="language">Językowe</option>
+                    <option value="business">Biznesowe</option>
+                    <option value="sport">Sportowe</option>
+                    <option value="art">Artystyczne</option>
+                    <option value="career">Kariera</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="eventDescription">Opis</label>
+                  <textarea id="eventDescription" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Dodaj wydarzenie
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>O nas</h3>
+          <p>
+            Vistula Events - platforma do informowania o wydarzeniach
+            uniwersytetu Vistula
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Kontakty</h3>
+          <p>Email: events@vistula.edu.pl</p>
+          <p>Telefon: +48 22 000 00 00</p>
+        </div>
+        <div class="footer-section">
+          <h3>Sieci społecznościowe</h3>
+          <div class="social-links">
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/calendar.js"></script>
+  </body>
+</html>

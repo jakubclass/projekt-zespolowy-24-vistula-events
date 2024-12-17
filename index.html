@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vistula Events - Wydarzenia uniwersyteckie</title>
+    <meta
+      name="description"
+      content="Platforma informacyjna o wydarzeniach Uniwersytetu Vistula"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="index.html" class="logo-btn">
+          <span class="logo-text">Vistula Events</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="active">Strona główna</a>
+          <a href="pages/events.html">Wydarzenia</a>
+          <a href="pages/calendar.html">Kalendarz</a>
+          <a href="pages/about.html">O nas</a>
+          <a href="pages/login.html" class="btn-auth">Zaloguj się</a>
+        </div>
+        <button class="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Witaj w świecie wydarzeń Vistula</h1>
+          <p>
+            Odkryj najciekawsze wydarzenia, konferencje i spotkania na
+            Uniwersytecie Vistula
+          </p>
+          <div class="hero-buttons">
+            <a href="pages/events.html" class="btn btn-primary"
+              >Zobacz wydarzenia</a
+            >
+            <a href="pages/calendar.html" class="btn btn-secondary"
+              >Otwórz kalendarz</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-events">
+        <h2>Najbliższe wydarzenia</h2>
+        <div class="events-grid">
+          <div class="event-card">
+            <div class="event-date">
+              <span class="day">24</span>
+              <span class="month">Kwiecień</span>
+            </div>
+            <img src="images/events/open-day.jpg" alt="Dzień otwartych drzwi" />
+            <div class="event-content">
+              <span class="event-category academic">Akademicki</span>
+              <h3>Dzień otwartych drzwi</h3>
+              <p>Poznaj nasz uniwersytet i programy studiów</p>
+              <button onclick="openModal('modal-1')" class="btn btn-outline">
+                Więcej
+              </button>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="event-date">
+              <span class="day">15</span>
+              <span class="month">Maj</span>
+            </div>
+            <img
+              src="images/events/conference.jpg"
+              alt="Międzynarodowa konferencja"
+            />
+            <div class="event-content">
+              <span class="event-category scientific">Naukowy</span>
+              <h3>Międzynarodowa konferencja IT</h3>
+              <p>Spotkanie z liderami branży IT z różnych krajów</p>
+              <button onclick="openModal('modal-2')" class="btn btn-outline">
+                Więcej
+              </button>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="event-date">
+              <span class="day">1</span>
+              <span class="month">Czerwiec</span>
+            </div>
+            <img src="images/events/festival.jpg" alt="Festiwal studencki" />
+            <div class="event-content">
+              <span class="event-category cultural">Kulturalny</span>
+              <h3>Letni festiwal</h3>
+              <p>Muzyka, sztuka i rozrywka dla wszystkich studentów</p>
+              <button onclick="openModal('modal-3')" class="btn btn-outline">
+                Więcej
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>O nas</h3>
+          <p>
+            Vistula Events - platforma informacyjna o wydarzeniach Uniwersytetu
+            Vistula
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Kontakt</h3>
+          <p>Email: events@vistula.edu.pl</p>
+          <p>Telefon: +48 22 000 00 00</p>
+        </div>
+        <div class="footer-section">
+          <h3>Media społecznościowe</h3>
+          <div class="social-links">
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+
+    <div class="modal" id="modal-1">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <span class="event-category academic">Akademicki</span>
+          <h2>Dzień otwartych drzwi</h2>
+          <div class="event-info">
+            <div class="info-item">
+              <i class="far fa-calendar"></i>
+              <span>24 Kwietnia 2024</span>
+            </div>
+            <div class="info-item">
+              <i class="far fa-clock"></i>
+              <span>10:00 - 16:00</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Główny kampus Vistula, ul. Stokłosów 3</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <img
+            src="images/events/open-day.jpg"
+            alt="Dzień otwartych drzwi"
+            class="modal-image"
+          />
+          <div class="event-description">
+            <h3>O wydarzeniu</h3>
+            <p>
+              Zapraszamy studentów i ich rodziców na Dzień otwartych drzwi w
+              Uniwersytecie Vistula! Poznajemy nasz uniwersytet, wykładowców i
+              studentów.
+            </p>
+
+            <h3>Program wydarzenia</h3>
+            <div class="event-schedule">
+              <div class="schedule-item">
+                <span class="time">10:00 - 10:30</span>
+                <div class="schedule-content">
+                  <h4>Rejestracja uczestników</h4>
+                  <p>Główny hol Uniwersytetu</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">10:30 - 11:15</span>
+                <div class="schedule-content">
+                  <h4>Powitalne słowo rektora</h4>
+                  <p>Prezentacja Uniwersytetu i programów studiów</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">11:30 - 13:00</span>
+                <div class="schedule-content">
+                  <h4>Prezentacje kierunków</h4>
+                  <p>Spotkania z dekanami i wykładowcami</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">13:00 - 14:00</span>
+                <div class="schedule-content">
+                  <h4>Przerwa obiadowa</h4>
+                  <p>Furmanka w kawiarni studenckiej</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">14:00 - 15:30</span>
+                <div class="schedule-content">
+                  <h4>Ekscytująca wycieczka po kampusie</h4>
+                  <p>
+                    Obejrzenie laboratoriów, biblioteki i kompleksu sportowego
+                  </p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">15:30 - 16:00</span>
+                <div class="schedule-content">
+                  <h4>Konsultacje dotyczące rekrutacji</h4>
+                  <p>
+                    Indywidualne konsultacje z przedstawicielami komisji
+                    rekrutacyjnej
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="registration-section">
+              <h3>Rejestracja na wydarzenie</h3>
+              <form class="registration-form">
+                <div class="form-group">
+                  <label for="name">Twoje imię</label>
+                  <input type="text" id="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Telefon</label>
+                  <input type="tel" id="phone" />
+                </div>
+                <div class="form-group">
+                  <label for="program">Zainteresowana specjalizacja</label>
+                  <select id="program" required>
+                    <option value="">Wybierz specjalizację</option>
+                    <option value="it">Technologie informatyczne</option>
+                    <option value="business">Biznes i zarządzanie</option>
+                    <option value="economics">Ekonomia</option>
+                    <option value="languages">Język angielski</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Zarejestruj się
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-2">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <span class="event-category scientific">Naukowy</span>
+          <h2>Międzynarodowa konferencja IT</h2>
+          <div class="event-info">
+            <div class="info-item">
+              <i class="far fa-calendar"></i>
+              <span>15 Maja 2024</span>
+            </div>
+            <div class="info-item">
+              <i class="far fa-clock"></i>
+              <span>09:00 - 18:00</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Sala konferencyjna Vistula, 2 piętro</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <img
+            src="images/events/conference.jpg"
+            alt="Konferencja IT"
+            class="modal-image"
+          />
+          <div class="event-description">
+            <h3>O konferencji</h3>
+            <p>
+              Roczna międzynarodowa konferencja, poświęcona ostatnim trendach w
+              branży IT. Liderzy branży z różnych krajów podzielą się swoim
+              doświadczeniem i wiedzą.
+            </p>
+
+            <h3>Główne tematy</h3>
+            <ul class="topics-list">
+              <li>Sztuczna inteligencja i uczenie maszynowe</li>
+              <li>Cyberbezpieczeństwo w współczesnym świecie</li>
+              <li>Chmury i mikroserwisy</li>
+              <li>Blockchain i kryptowaluty</li>
+              <li>DevOps i narzędzia</li>
+            </ul>
+
+            <h3>Program konferencji</h3>
+            <div class="event-schedule">
+              <div class="schedule-item">
+                <span class="time">09:00 - 09:30</span>
+                <div class="schedule-content">
+                  <h4>Rejestracja i powitalne kawy</h4>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">09:30 - 10:30</span>
+                <div class="schedule-content">
+                  <h4>Otwarcie konferencji</h4>
+                  <p>Keynote speech: "Przyszłość IT Industry"</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">10:45 - 12:15</span>
+                <div class="schedule-content">
+                  <h4>Równoległe sesje</h4>
+                  <p>
+                    - AI i ML (Sala A)<br />
+                    - Cyberbezpieczeństwo (Sala B)<br />
+                    - Cloud Computing (Sala C)
+                  </p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">12:15 - 13:15</span>
+                <div class="schedule-content">
+                  <h4>Obiad i networking</h4>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">13:15 - 16:30</span>
+                <div class="schedule-content">
+                  <h4>Workshopy techniczne</h4>
+                  <p>Praktyczne zajęcia w małych grupach</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">16:45 - 17:45</span>
+                <div class="schedule-content">
+                  <h4>Panel dyskusji</h4>
+                  <p>"Trendy i wyzwania w IT 2024"</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="speakers-section">
+              <h3>Prelegenci</h3>
+              <div class="speakers-grid">
+                <div class="speaker-card">
+                  <img src="images/speakers/speaker1.jpg" alt="John Doe" />
+                  <h4>John Doe</h4>
+                  <p>Senior AI Engineer, Google</p>
+                </div>
+                <div class="speaker-card">
+                  <img src="images/speakers/speaker2.jpg" alt="Jane Smith" />
+                  <h4>Jane Smith</h4>
+                  <p>CTO, Microsoft</p>
+                </div>
+                <!-- Dodaj więcej prelegentów -->
+              </div>
+            </div>
+
+            <div class="registration-section">
+              <h3>Rejestracja na konferencję</h3>
+              <form class="registration-form">
+                <div class="form-group">
+                  <label for="name2">Twoje imię</label>
+                  <input type="text" id="name2" required />
+                </div>
+                <div class="form-group">
+                  <label for="email2">Email</label>
+                  <input type="email" id="email2" required />
+                </div>
+                <div class="form-group">
+                  <label for="company">Firma</label>
+                  <input type="text" id="company" />
+                </div>
+                <div class="form-group">
+                  <label for="workshop">Wybierz workshopy</label>
+                  <select id="workshop" required>
+                    <option value="">Wybierz workshopy</option>
+                    <option value="ai">AI i ML</option>
+                    <option value="security">Cyberbezpieczeństwo</option>
+                    <option value="cloud">Cloud Computing</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Zarejestruj się
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-3">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <span class="event-category cultural">Kulturalny</span>
+          <h2>Letni festiwal</h2>
+          <div class="event-info">
+            <div class="info-item">
+              <i class="far fa-calendar"></i>
+              <span>1 Czerwca 2024</span>
+            </div>
+            <div class="info-item">
+              <i class="far fa-clock"></i>
+              <span>12:00 - 22:00</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Kampus Vistula, otwarta terenowa</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <img
+            src="images/events/festival.jpg"
+            alt="Letni festiwal"
+            class="modal-image"
+          />
+          <div class="event-description">
+            <h3>O festiwalu</h3>
+            <p>
+              Wielki letni festiwal, który łączy muzykę, sztukę i rozrywkę!
+              Pełny dzień niezapomnianych wrażeń dla studentów, wykładowców i
+              gości Uniwersytetu.
+            </p>
+
+            <h3>Strefy festiwalowe</h3>
+            <div class="festival-zones">
+              <div class="zone-card">
+                <h4>Scena muzyczna</h4>
+                <p>Występy studentów i gości</p>
+              </div>
+              <div class="zone-card">
+                <h4>Miejsce artystyczne</h4>
+                <p>Wystawy, warsztaty malarskie i rzeźbiarskie</p>
+              </div>
+              <div class="zone-card">
+                <h4>Kort fud</h4>
+                <p>Różne kuchnie świata i napoje odnowiające</p>
+              </div>
+              <div class="zone-card">
+                <h4>Zakład gier</h4>
+                <p>Gry planszowe, kwesty i rozrywki</p>
+              </div>
+            </div>
+
+            <h3>Program festiwalowy</h3>
+            <div class="event-schedule">
+              <div class="schedule-item">
+                <span class="time">12:00</span>
+                <div class="schedule-content">
+                  <h4>Otwarcie festiwalowego</h4>
+                  <p>Oficjalna ceremonia i parad uczestników</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">13:00 - 18:00</span>
+                <div class="schedule-content">
+                  <h4>Główny program</h4>
+                  <p>
+                    - Występy muzyczne<br />
+                    - Warsztaty<br />
+                    - Performance artystyczne
+                  </p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">19:00 - 21:00</span>
+                <div class="schedule-content">
+                  <h4>Wieczorny program</h4>
+                  <p>Główny koncert i spektakle świetlne</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">21:00 - 22:00</span>
+                <div class="schedule-content">
+                  <h4>Zamknięcie festiwalowego</h4>
+                  <p>Fajerwerki i ostatni spektakl</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="registration-section">
+              <h3>Zamów bilet na festiwal</h3>
+              <form class="registration-form">
+                <div class="form-group">
+                  <label for="name3">Twoje imię</label>
+                  <input type="text" id="name3" required />
+                </div>
+                <div class="form-group">
+                  <label for="email3">Email</label>
+                  <input type="email" id="email3" required />
+                </div>
+                <div class="form-group">
+                  <label for="ticket-type">Typ biletu</label>
+                  <select id="ticket-type" required>
+                    <option value="">Wybierz typ biletu</option>
+                    <option value="student">Student (darmowy)</option>
+                    <option value="guest">Gościnny (20 PLN)</option>
+                    <option value="vip">VIP (50 PLN)</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Zamów bilet
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

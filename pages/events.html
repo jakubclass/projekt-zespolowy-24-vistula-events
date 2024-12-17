@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>События - Vistula Events</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="../index.html" class="logo-btn">
+          <span class="logo-text">Vistula Events</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Strona główna</a>
+          <a href="events.html" class="active">Wydarzenia</a>
+          <a href="calendar.html">Kalendarz</a>
+          <a href="about.html">O nas</a>
+          <a href="login.html" class="btn-auth">Zaloguj się</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero секция -->
+      <section class="hero events-hero">
+        <div class="hero-content">
+          <h1>Wydarzenia Vistula</h1>
+          <p>Wszystkie wydarzenia uniwersyteckie w jednym miejscu</p>
+        </div>
+      </section>
+
+      <!-- Секция фильтров -->
+      <section class="filters-section">
+        <div class="container">
+          <div class="filters">
+            <select class="filter-select" id="category-filter">
+              <option value="">Wszystkie kategorie</option>
+              <option value="academic">Akademickie</option>
+              <option value="scientific">Naukowe</option>
+              <option value="cultural">Kulturalne</option>
+              <option value="workshop">Warsztaty</option>
+              <option value="language">Językowe</option>
+              <option value="business">Biznesowe</option>
+              <option value="sport">Sportowe</option>
+              <option value="art">Artystyczne</option>
+              <option value="career">Kariera</option>
+            </select>
+            <select class="filter-select" id="date-filter">
+              <option value="">Wszystkie daty</option>
+              <option value="today">Dziś</option>
+              <option value="week">Ten tydzień</option>
+              <option value="month">Ten miesiąc</option>
+            </select>
+            <input
+              type="text"
+              placeholder="Szukaj wydarzeń..."
+              class="search-input"
+              id="search-input"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Секция событий -->
+      <section class="events-section">
+        <div class="container">
+          <div class="events-grid">
+            <!-- Карточка 1 -->
+            <div class="event-card">
+              <div class="event-date">
+                <span class="day">24</span>
+                <span class="month">Kwi</span>
+              </div>
+              <img src="../images/events/open-day.jpg" alt="Dzień otwarty" />
+              <div class="event-content">
+                <span class="event-category academic">Akademickie</span>
+                <h3>Dzień otwarty</h3>
+                <p>Poznaj nasz uniwersytet i programy nauczania</p>
+                <button onclick="openModal('modal-1')" class="btn btn-outline">
+                  Więcej
+                </button>
+              </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="event-card">
+              <div class="event-date">
+                <span class="day">15</span>
+                <span class="month">Maj</span>
+              </div>
+              <img src="../images/events/conference.jpg" alt="Konferencja IT" />
+              <div class="event-content">
+                <span class="event-category scientific">Naukowe</span>
+                <h3>Międzynarodowa Konferencja IT</h3>
+                <p>
+                  Spotkanie z wiodącymi specjalistami w dziedzinie technologii
+                  informacyjnych
+                </p>
+                <button onclick="openModal('modal-2')" class="btn btn-outline">
+                  Więcej
+                </button>
+              </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="event-card">
+              <div class="event-date">
+                <span class="day">1</span>
+                <span class="month">Cze</span>
+              </div>
+              <img
+                src="../images/events/festival.jpg"
+                alt="Festiwal studencki"
+              />
+              <div class="event-content">
+                <span class="event-category cultural">Kulturalne</span>
+                <h3>Festiwal letni</h3>
+                <p>Muzyka, sztuka i rozrywka dla wszystkich studentów</p>
+                <button onclick="openModal('modal-3')" class="btn btn-outline">
+                  Więcej
+                </button>
+              </div>
+            </div>
+
+            <!-- Карточка 4 -->
+            <div class="event-card">
+              <div class="event-date">
+                <span class="day">5</span>
+                <span class="month">Cze</span>
+              </div>
+              <img
+                src="../images/events/workshop.jpg"
+                alt="Warsztaty projektowania"
+              />
+              <div class="event-content">
+                <span class="event-category workshop">Warsztaty</span>
+                <h3>Warsztaty UI/UX Design</h3>
+                <p>
+                  Praktyczne warsztaty tworzenia nowoczesnych interfejsów
+                  użytkownika
+                </p>
+                <button onclick="openModal('modal-4')" class="btn btn-outline">
+                  Więcej
+                </button>
+              </div>
+            </div>
+
+            <!-- Карточка 5 -->
+            <div class="event-card">
+              <div class="event-date">
+                <span class="day">8</span>
+                <span class="month">Cze</span>
+              </div>
+              <img src="../images/events/language.jpg" alt="Klub językowy" />
+              <div class="event-content">
+                <span class="event-category language">Językowe</span>
+                <h3>Międzynarodowy klub językowy</h3>
+                <p>
+                  Spotkanie w celu praktyki języków obcych z native speakerami
+                </p>
+                <button onclick="openModal('modal-5')" class="btn btn-outline">
+                  Więcej
+                </button>
+              </div>
+            </div>
+
+            <!-- Карточка 6 -->
+            <div class="event-card">
+              <div class="event-date">
+                <span class="day">12</span>
+                <span class="month">Cze</span>
+              </div>
+              <img
+                src="../images/events/business.jpg"
+                alt="Seminarium biznesowe"
+              />
+              <div class="event-content">
+                <span class="event-category business">Biznesowe</span>
+                <h3>Seminarium przedsiębiorczości</h3>
+                <p>Jak rozpocząć własny biznes: od pomysłu do realizacji</p>
+                <button onclick="openModal('modal-6')" class="btn btn-outline">
+                  Więcej
+                </button>
+              </div>
+            </div>
+
+            <!-- Карточка 7 -->
+            <div class="event-card">
+              <div class="event-date">
+                <span class="day">15</span>
+                <span class="month">Cze</span>
+              </div>
+              <img src="../images/events/sport.jpg" alt="Wydarzenie sportowe" />
+              <div class="event-content">
+                <span class="event-category sport">Sportowe</span>
+                <h3>Maraton uniwersytecki</h3>
+                <p>Doroczny bieg studentów i wykładowców</p>
+                <button onclick="openModal('modal-7')" class="btn btn-outline">
+                  Więcej
+                </button>
+              </div>
+            </div>
+
+            <!-- Карточка 8 -->
+            <div class="event-card">
+              <div class="event-date">
+                <span class="day">18</span>
+                <span class="month">Cze</span>
+              </div>
+              <img src="../images/events/art.jpg" alt="Wystawa" />
+              <div class="event-content">
+                <span class="event-category art">Artystyczne</span>
+                <h3>Wystawa sztuki studenckiej</h3>
+                <p>Wystawa prac studentów wydziału sztuki</p>
+                <button onclick="openModal('modal-8')" class="btn btn-outline">
+                  Więcej
+                </button>
+              </div>
+            </div>
+
+            <!-- Карточка 9 -->
+            <div class="event-card">
+              <div class="event-date">
+                <span class="day">22</span>
+                <span class="month">Cze</span>
+              </div>
+              <img src="../images/events/career.jpg" alt="Dzień kariery" />
+              <div class="event-content">
+                <span class="event-category career">Kariera</span>
+                <h3>Dzień kariery</h3>
+                <p>Spotkania z pracodawcami i prezentacje firm</p>
+                <button onclick="openModal('modal-9')" class="btn btn-outline">
+                  Więcej
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>O nas</h3>
+          <p>
+            Vistula Events - platforma informacyjna o wydarzeniach Uniwersytetu
+            Vistula
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Kontakt</h3>
+          <p>Email: events@vistula.edu.pl</p>
+          <p>Telefon: +48 22 000 00 00</p>
+        </div>
+        <div class="footer-section">
+          <h3>Media społecznościowe</h3>
+          <div class="social-links">
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Модальные окна -->
+    <!-- Модальное окно 1 - День открытых дверей -->
+    <div class="modal" id="modal-1">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <span class="event-category academic">Akademickie</span>
+          <h2>Dzień otwartych drzwi</h2>
+          <div class="event-info">
+            <div class="info-item">
+              <i class="far fa-calendar"></i>
+              <span>24 Kwietnia 2025</span>
+            </div>
+            <div class="info-item">
+              <i class="far fa-clock"></i>
+              <span>10:00 - 16:00</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Główny kampus Vistula</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <img
+            src="../images/events/open-day.jpg"
+            alt="Dzień otwartych drzwi"
+            class="modal-image"
+          />
+          <div class="event-description">
+            <h3>O wydarzeniu</h3>
+            <p>
+              Zapraszamy przyszłych studentów i ich rodziców na Dzień otwartych
+              drzwi w Uniwersytecie Vistula! Poznaj nasz uniwersytet,
+              wykładowców i studentów.
+            </p>
+
+            <h3>Program wydarzenia</h3>
+            <div class="event-schedule">
+              <div class="schedule-item">
+                <span class="time">10:00 - 10:30</span>
+                <div class="schedule-content">
+                  <h4>Rejestracja uczestników</h4>
+                  <p>Główny hol uniwersytetu</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">10:30 - 11:15</span>
+                <div class="schedule-content">
+                  <h4>Powitalne słowo rektora</h4>
+                  <p>Prezentacja uniwersytetu i programów studiów</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">11:30 - 13:00</span>
+                <div class="schedule-content">
+                  <h4>Prezentacje kierunków</h4>
+                  <p>Spotkania z dziekanami i wykładowcami</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="registration-section">
+              <h3>Rejestracja na wydarzenie</h3>
+              <form class="registration-form">
+                <div class="form-group">
+                  <label for="name">Imię i nazwisko</label>
+                  <input type="text" id="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Telefon</label>
+                  <input type="tel" id="phone" />
+                </div>
+                <div class="form-group">
+                  <label for="interest">Zainteresowany kierunek</label>
+                  <select id="interest" required>
+                    <option value="">Wybierz kierunek</option>
+                    <option value="it">Informatyka</option>
+                    <option value="business">Zarządzanie</option>
+                    <option value="economics">Ekonomia</option>
+                    <option value="languages">Filologia</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Zarejestruj się
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно 2 - IT-конференция -->
+    <div class="modal" id="modal-2">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <span class="event-category scientific">Naukowe</span>
+          <h2>Międzynarodowa Konferencja IT</h2>
+          <div class="event-info">
+            <div class="info-item">
+              <i class="far fa-calendar"></i>
+              <span>15 Maja 2025</span>
+            </div>
+            <div class="info-item">
+              <i class="far fa-clock"></i>
+              <span>09:00 - 18:00</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Sala konferencyjna Vistula</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <img
+            src="../images/events/conference.jpg"
+            alt="Konferencja IT"
+            class="modal-image"
+          />
+          <div class="event-description">
+            <h3>O konferencji</h3>
+            <p>
+              Coroczna międzynarodowa konferencja poświęcona najnowszym trendom
+              w dziedzinie technologii informacyjnych.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно 3 - Летний фестиваль -->
+    <div class="modal" id="modal-3">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <span class="event-category cultural">Kulturalne</span>
+          <h2>Festiwal letni</h2>
+          <div class="event-info">
+            <div class="info-item">
+              <i class="far fa-calendar"></i>
+              <span>1 Czerwca 2025</span>
+            </div>
+            <div class="info-item">
+              <i class="far fa-clock"></i>
+              <span>12:00 - 22:00</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Kampus Vistula</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <img
+            src="../images/events/festival.jpg"
+            alt="Летний фестиваль"
+            class="modal-image"
+          />
+          <div class="event-description">
+            <h3>O festiwalu</h3>
+            <p>
+              Wielki festiwal letni z muzyką, sztuką i rozrywką dla wszystkich
+              studentów i gości uniwersytetu!
+            </p>
+
+            <h3>Program festiwalu</h3>
+            <div class="event-schedule">
+              <div class="schedule-item">
+                <span class="time">12:00 - 13:00</span>
+                <div class="schedule-content">
+                  <h4>Otwarcie festiwalu</h4>
+                  <p>Ceremonia otwarcia</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">13:00 - 18:00</span>
+                <div class="schedule-content">
+                  <h4>Program główny</h4>
+                  <p>Koncerty, wystawy, warsztaty</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">19:00 - 22:00</span>
+                <div class="schedule-content">
+                  <h4>Program wieczorny</h4>
+                  <p>Główne występy i pokaz fajerwerków</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="registration-section">
+              <h3>Otrzymaj bilet</h3>
+              <form class="registration-form">
+                <div class="form-group">
+                  <label for="name3">Imię i nazwisko</label>
+                  <input type="text" id="name3" required />
+                </div>
+                <div class="form-group">
+                  <label for="email3">Email</label>
+                  <input type="email" id="email3" required />
+                </div>
+                <div class="form-group">
+                  <label for="ticket-type">Typ biletu</label>
+                  <select id="ticket-type" required>
+                    <option value="">Wybierz typ biletu</option>
+                    <option value="student">Studencki (bezpłatny)</option>
+                    <option value="guest">Gościnny (20 PLN)</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Otrzymaj bilet
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно 4 - UI/UX Workshop -->
+    <div class="modal" id="modal-4">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <span class="event-category workshop">Warsztaty</span>
+          <h2>Warsztaty UI/UX Design</h2>
+          <div class="event-info">
+            <div class="info-item">
+              <i class="far fa-calendar"></i>
+              <span>5 Czerwca 2025</span>
+            </div>
+            <div class="info-item">
+              <i class="far fa-clock"></i>
+              <span>14:00 - 17:00</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Laboratorium komputerowe, sala 301</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <img
+            src="../images/events/workshop.jpg"
+            alt="Warsztaty UI/UX"
+            class="modal-image"
+          />
+          <div class="event-description">
+            <h3>O warsztatach</h3>
+            <p>
+              Praktyczne warsztaty z projektowania interfejsów użytkownika i
+              doświadczenia użytkownika. Poznaj najnowsze trendy i narzędzia w
+              branży UI/UX.
+            </p>
+
+            <h3>Program warsztatów</h3>
+            <div class="event-schedule">
+              <div class="schedule-item">
+                <span class="time">14:00 - 14:30</span>
+                <div class="schedule-content">
+                  <h4>Wprowadzenie do UI/UX</h4>
+                  <p>Podstawowe zasady i najlepsze praktyki</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">14:30 - 16:00</span>
+                <div class="schedule-content">
+                  <h4>Praktyczne ćwiczenia</h4>
+                  <p>Praca z Figma i innymi narzędziami</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">16:00 - 17:00</span>
+                <div class="schedule-content">
+                  <h4>Prezentacja projektów</h4>
+                  <p>Feedback i dyskusja</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="registration-section">
+              <h3>Rejestracja na warsztaty</h3>
+              <form class="registration-form">
+                <div class="form-group">
+                  <label for="name4">Imię i nazwisko</label>
+                  <input type="text" id="name4" required />
+                </div>
+                <div class="form-group">
+                  <label for="email4">Email</label>
+                  <input type="email" id="email4" required />
+                </div>
+                <div class="form-group">
+                  <label for="experience">Poziom doświadczenia</label>
+                  <select id="experience" required>
+                    <option value="">Wybierz poziom</option>
+                    <option value="beginner">Początkujący</option>
+                    <option value="intermediate">Średniozaawansowany</option>
+                    <option value="advanced">Zaawansowany</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Zarejestruj się
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно 5 - Language Club -->
+    <div class="modal" id="modal-5">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <span class="event-category language">Językowe</span>
+          <h2>Międzynarodowy klub językowy</h2>
+          <div class="event-info">
+            <div class="info-item">
+              <i class="far fa-calendar"></i>
+              <span>8 Czerwca 2025</span>
+            </div>
+            <div class="info-item">
+              <i class="far fa-clock"></i>
+              <span>15:00 - 17:00</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Sala konferencyjna B</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <img
+            src="../images/events/language.jpg"
+            alt="Klub językowy"
+            class="modal-image"
+          />
+          <div class="event-description">
+            <h3>O spotkaniu</h3>
+            <p>
+              Praktyka języków obcych z native speakerami w przyjaznej
+              atmosferze. Możliwość rozmowy w różnych językach i poznania nowych
+              kultur.
+            </p>
+
+            <h3>Dostępne języki</h3>
+            <ul>
+              <li>Angielski</li>
+              <li>Niemiecki</li>
+              <li>Hiszpański</li>
+              <li>Francuski</li>
+              <li>Włoski</li>
+            </ul>
+
+            <div class="registration-section">
+              <h3>Zapisz się na spotkanie</h3>
+              <form class="registration-form">
+                <div class="form-group">
+                  <label for="name5">Imię i nazwisko</label>
+                  <input type="text" id="name5" required />
+                </div>
+                <div class="form-group">
+                  <label for="email5">Email</label>
+                  <input type="email" id="email5" required />
+                </div>
+                <div class="form-group">
+                  <label for="languages">Wybierz języki</label>
+                  <select id="languages" multiple required>
+                    <option value="en">Angielski</option>
+                    <option value="de">Niemiecki</option>
+                    <option value="es">Hiszpański</option>
+                    <option value="fr">Francuski</option>
+                    <option value="it">Włoski</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Zapisz się
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно 6 - Business Seminar -->
+    <div class="modal" id="modal-6">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <span class="event-category business">Biznesowe</span>
+          <h2>Seminarium przedsiębiorczości</h2>
+          <div class="event-info">
+            <div class="info-item">
+              <i class="far fa-calendar"></i>
+              <span>12 Czerwca 2025</span>
+            </div>
+            <div class="info-item">
+              <i class="far fa-clock"></i>
+              <span>11:00 - 14:00</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Aula główna</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <img
+            src="../images/events/business.jpg"
+            alt="Seminarium biznesowe"
+            class="modal-image"
+          />
+          <div class="event-description">
+            <h3>O seminarium</h3>
+            <p>
+              Praktyczne wskazówki jak rozpocząć własny biznes, od pomysłu do
+              realizacji. Spotkanie z doświadczonymi przedsiębiorcami.
+            </p>
+
+            <h3>Program</h3>
+            <div class="event-schedule">
+              <div class="schedule-item">
+                <span class="time">11:00 - 12:00</span>
+                <div class="schedule-content">
+                  <h4>Od pomysłu do biznesplanu</h4>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">12:00 - 13:00</span>
+                <div class="schedule-content">
+                  <h4>Finansowanie i rozwój</h4>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">13:00 - 14:00</span>
+                <div class="schedule-content">
+                  <h4>Case studies i networking</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="registration-section">
+              <h3>Rejestracja na seminarium</h3>
+              <form class="registration-form">
+                <div class="form-group">
+                  <label for="name6">Imię i nazwisko</label>
+                  <input type="text" id="name6" required />
+                </div>
+                <div class="form-group">
+                  <label for="email6">Email</label>
+                  <input type="email" id="email6" required />
+                </div>
+                <div class="form-group">
+                  <label for="business-interest">Obszar zainteresowań</label>
+                  <select id="business-interest" required>
+                    <option value="">Wybierz obszar</option>
+                    <option value="startup">Start-up</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="finance">Finanse</option>
+                    <option value="management">Zarządzanie</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Zarejestruj się
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно 7 - University Marathon -->
+    <div class="modal" id="modal-7">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <span class="event-category sport">Sportowe</span>
+          <h2>Maraton uniwersytecki</h2>
+          <div class="event-info">
+            <div class="info-item">
+              <i class="far fa-calendar"></i>
+              <span>15 Czerwca 2025</span>
+            </div>
+            <div class="info-item">
+              <i class="far fa-clock"></i>
+              <span>09:00 - 13:00</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Kampus Vistula</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <img
+            src="../images/events/sport.jpg"
+            alt="Maraton"
+            class="modal-image"
+          />
+          <div class="event-description">
+            <h3>O wydarzeniu</h3>
+            <p>
+              Doroczny bieg dla studentów i wykładowców. Różne dystanse do
+              wyboru, nagrody dla zwycięzców.
+            </p>
+
+            <h3>Dystanse</h3>
+            <ul>
+              <li>5 km - bieg rekreacyjny</li>
+              <li>10 km - bieg główny</li>
+              <li>21 km - półmaraton</li>
+            </ul>
+
+            <div class="registration-section">
+              <h3>Rejestracja na maraton</h3>
+              <form class="registration-form">
+                <div class="form-group">
+                  <label for="name7">Imię i nazwisko</label>
+                  <input type="text" id="name7" required />
+                </div>
+                <div class="form-group">
+                  <label for="email7">Email</label>
+                  <input type="email" id="email7" required />
+                </div>
+                <div class="form-group">
+                  <label for="distance">Wybierz dystans</label>
+                  <select id="distance" required>
+                    <option value="">Wybierz dystans</option>
+                    <option value="5k">5 km - bieg rekreacyjny</option>
+                    <option value="10k">10 km - bieg główny</option>
+                    <option value="21k">21 km - półmaraton</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Zarejestruj się
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно 8 - Art Exhibition -->
+    <div class="modal" id="modal-8">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <span class="event-category art">Artystyczne</span>
+          <h2>Wystawa sztuki studenckiej</h2>
+          <div class="event-info">
+            <div class="info-item">
+              <i class="far fa-calendar"></i>
+              <span>18 Czerwca 2025</span>
+            </div>
+            <div class="info-item">
+              <i class="far fa-clock"></i>
+              <span>13:00 - 19:00</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Galeria Vistula</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <img
+            src="../images/events/art.jpg"
+            alt="Wystawa sztuki"
+            class="modal-image"
+          />
+          <div class="event-description">
+            <h3>O wystawie</h3>
+            <p>
+              Prezentacja prac studentów wydziału sztuki. Malarstwo, rzeźba,
+              fotografia i sztuka cyfrowa.
+            </p>
+
+            <h3>Program</h3>
+            <div class="event-schedule">
+              <div class="schedule-item">
+                <span class="time">13:00</span>
+                <div class="schedule-content">
+                  <h4>Otwarcie wystawy</h4>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">15:00</span>
+                <div class="schedule-content">
+                  <h4>Spotkanie z artystami</h4>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">17:00</span>
+                <div class="schedule-content">
+                  <h4>Warsztaty artystyczne</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="registration-section">
+              <h3>Zapisz się na wystawę</h3>
+              <form class="registration-form">
+                <div class="form-group">
+                  <label for="name8">Imię i nazwisko</label>
+                  <input type="text" id="name8" required />
+                </div>
+                <div class="form-group">
+                  <label for="email8">Email</label>
+                  <input type="email" id="email8" required />
+                </div>
+                <div class="form-group">
+                  <label for="art-interest">Zainteresowania artystyczne</label>
+                  <select id="art-interest" multiple>
+                    <option value="painting">Malarstwo</option>
+                    <option value="sculpture">Rzeźba</option>
+                    <option value="photo">Fotografia</option>
+                    <option value="digital">Sztuka cyfrowa</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Zapisz się
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно 9 - Career Day -->
+    <div class="modal" id="modal-9">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <span class="event-category career">Kariera</span>
+          <h2>Dzień kariery</h2>
+          <div class="event-info">
+            <div class="info-item">
+              <i class="far fa-calendar"></i>
+              <span>22 Czerwca 2025</span>
+            </div>
+            <div class="info-item">
+              <i class="far fa-clock"></i>
+              <span>10:00 - 16:00</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Centrum konferencyjne Vistula</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <img
+            src="../images/events/career.jpg"
+            alt="Dzień kariery"
+            class="modal-image"
+          />
+          <div class="event-description">
+            <h3>O wydarzeniu</h3>
+            <p>
+              Spotkania z pracodawcami, prezentacje firm i możliwości rozwoju
+              kariery. Warsztaty z pisania CV i rozmów kwalifikacyjnych.
+            </p>
+
+            <h3>Program</h3>
+            <div class="event-schedule">
+              <div class="schedule-item">
+                <span class="time">10:00 - 12:00</span>
+                <div class="schedule-content">
+                  <h4>Prezentacje firm</h4>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">12:00 - 14:00</span>
+                <div class="schedule-content">
+                  <h4>Warsztaty CV</h4>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <span class="time">14:00 - 16:00</span>
+                <div class="schedule-content">
+                  <h4>Networking</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="registration-section">
+              <h3>Rejestracja na dzień kariery</h3>
+              <form class="registration-form">
+                <div class="form-group">
+                  <label for="name9">Imię i nazwisko</label>
+                  <input type="text" id="name9" required />
+                </div>
+                <div class="form-group">
+                  <label for="email9">Email</label>
+                  <input type="email" id="email9" required />
+                </div>
+                <div class="form-group">
+                  <label for="career-interest"
+                    >Obszar zainteresowań zawodowych</label
+                  >
+                  <select id="career-interest" multiple required>
+                    <option value="it">IT</option>
+                    <option value="finance">Finanse</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="hr">HR</option>
+                    <option value="consulting">Consulting</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="cv-workshop">Udział w warsztatach CV</label>
+                  <select id="cv-workshop" required>
+                    <option value="">Wybierz opcję</option>
+                    <option value="yes">Tak</option>
+                    <option value="no">Nie</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Zarejestruj się
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openModal(modalId) {
+        console.log("Opening modal:", modalId); // Добавим для отладки
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          modal.style.display = "block";
+          document.body.classList.add("modal-open");
+        } else {
+          console.error("Modal not found:", modalId);
+        }
+      }
+
+      // Закрытие модального окна при клике на крестик
+      document.querySelectorAll(".close-modal").forEach((button) => {
+        button.addEventListener("click", function () {
+          const modal = this.closest(".modal");
+          if (modal) {
+            modal.style.display = "none";
+            document.body.classList.remove("modal-open");
+          }
+        });
+      });
+
+      // Закрытие модального окна при клике вне его области
+      window.addEventListener("click", function (event) {
+        if (event.target.classList.contains("modal")) {
+          event.target.style.display = "none";
+          document.body.classList.remove("modal-open");
+        }
+      });
+
+      // Закрытие модального окна при нажатии клавиши Escape
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          const openModal = document.querySelector(
+            '.modal[style="display: block;"]'
+          );
+          if (openModal) {
+            openModal.style.display = "none";
+            document.body.classList.remove("modal-open");
+          }
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const categoryFilter = document.getElementById("category-filter");
+        const dateFilter = document.getElementById("date-filter");
+        const searchInput = document.getElementById("search-input");
+        const eventCards = document.querySelectorAll(".event-card");
+
+        function filterEvents() {
+          const selectedCategory = categoryFilter.value.toLowerCase();
+          const selectedDate = dateFilter.value;
+          const searchText = searchInput.value.toLowerCase();
+
+          eventCards.forEach((card) => {
+            let showCard = true;
+
+            // Фильтрация по категории
+            if (selectedCategory) {
+              const cardCategory =
+                card.querySelector(".event-category").classList[1];
+              if (cardCategory !== selectedCategory) {
+                showCard = false;
+              }
+            }
+
+            // Фильтрация по дате
+            if (selectedDate && showCard) {
+              const eventDate = new Date(
+                card.querySelector(".event-date").textContent
+              );
+              const today = new Date();
+
+              switch (selectedDate) {
+                case "today":
+                  if (eventDate.toDateString() !== today.toDateString()) {
+                    showCard = false;
+                  }
+                  break;
+                case "week":
+                  const weekFromNow = new Date();
+                  weekFromNow.setDate(weekFromNow.getDate() + 7);
+                  if (eventDate > weekFromNow || eventDate < today) {
+                    showCard = false;
+                  }
+                  break;
+                case "month":
+                  const monthFromNow = new Date();
+                  monthFromNow.setMonth(monthFromNow.getMonth() + 1);
+                  if (eventDate > monthFromNow || eventDate < today) {
+                    showCard = false;
+                  }
+                  break;
+              }
+            }
+
+            // Поиск по тексту
+            if (searchText && showCard) {
+              const cardTitle = card
+                .querySelector("h3")
+                .textContent.toLowerCase();
+              const cardDesc = card
+                .querySelector("p")
+                .textContent.toLowerCase();
+              if (
+                !cardTitle.includes(searchText) &&
+                !cardDesc.includes(searchText)
+              ) {
+                showCard = false;
+              }
+            }
+
+            // Показываем или скрываем карточку
+            card.style.display = showCard ? "block" : "none";
+          });
+        }
+
+        // Добавляем слушатели событий
+        categoryFilter.addEventListener("change", filterEvents);
+        dateFilter.addEventListener("change", filterEvents);
+        searchInput.addEventListener("input", filterEvents);
+      });
+    </script>
+  </body>
+</html>
